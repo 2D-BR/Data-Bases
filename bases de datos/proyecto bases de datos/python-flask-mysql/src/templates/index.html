@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <h1 class="text-center mt-5 mb-5 text-primary">Registro y consulta de clientes</h1>
+
+    <div class="container">
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="/cliente" method="POST">
+                    <div class="row mb-8">
+                        <div class="col">
+                            <label>Codigo_cliente</label>
+                            <input type="number" min="1000" class="form-control mb-3" name="Codigo cliente" required>      
+                        </div>
+                        <div class="col">
+                            <label>Nombre_cliente</label>
+                            <input type="text" class="form-control mb-3" name="Nombre del cliente" required>      
+                        </div>
+                        <div class="col">
+                            <label>Segundo_nombre_cliente</label>
+                            <input type="text" class="form-control mb-3" name="Segundo nombre del cliente">      
+                        </div>
+                        <div class="col">
+                            <label>Apellido_cliente</label>
+                            <input type="text" class="form-control mb-3" name="apellido del cliente" required>      
+                        </div>
+                        <div class="col">
+                            <label>Departamento</label>
+                            <input type="text" class="form-control mb-3" name="Departamento" required>      
+                        </div>
+                        <div class="col">
+                            <label>Ciudad</label>
+                            <input type="text" class="form-control mb-3" name="Ciudad" required>      
+                        </div>
+                        <div class="col">
+                            <label>Direccion</label>
+                            <input type="text" class="form-control mb-3" name="Direccion" required>      
+                        </div>
+                        <div class="col">
+                            <label>Telefono</label>
+                            <input type="text" class="form-control mb-3" name="Telefono" required>      
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary mb-3 mt-4" type="submit">Save</button> 
+                        </div>
+                        
+                    </div>
+
+                </form>
+
+                <!-- Tabla -->
+
+                <table class="table table-bordered">
+                    <thead>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Segundo_nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Acciones</th>
+                    </thead>
+                    <tbody>
+                        {% for d in data %}
+                        <tr>
+                            <td>{{d.COD_CLIENTE}}</td>
+                            <td>{{d.NOMBRE_CLI}}</td>
+                            <td>{{d.SEGUNDO_NOM_CLI}}</td>
+                            <td>{{d.APELLIDO_CLI}}</td>
+                            <td>{{d.DEPARTAMENTO}}</td>
+                            <td>{{d.CIUDAD}}</td>
+                            <td>{{d.DIRRECCION}}</td>
+                            <td>{{d.TELEFONO}}</td>
+                            <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.COD_CLIENTE}}" data-bs-toggle="modal" data-bs-target="#modal{{d.COD_CLIENTE}}">Edit</button></td>
+                            <td><a href="{{url_for('delete', id=d.COD_CLIENTE)}}" class="btn btn-danger btn-sm">Delete</a></td>
+
+                        </tr>
+
+                        <!-- modal -->
+
+                        <div class="modal fade" id="modal{{d.COD_CLIENTE}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{d.NOMBRE_CLI}}</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/edit/{{d.COD_CLIENTE}}" method="post">
+                                            <label>Nombre_cliente</label>
+                                            <input type="text" class="form-control mb-3" name="Nombre del cliente" value="{{d.NOMBRE_CLI}}">
+                                            <label>Segundo_nombre_cliente</label>
+                                            <input type="text" class="form-control mb-3" name="Segundo nombre del cliente" value="{{d.SEGUNDO_NOM_CLI}}">
+                                            <label>Apellido_cliente</label>
+                                            <input type="text" class="form-control mb-3" name="apellido del cliente" value="{{d.APELLIDO_CLI}}">
+                                            <label>Departamento</label>
+                                            <input type="text" class="form-control mb-3" name="Departamento" value="{{d.DEPARTAMENTO}}">
+                                            <label>Ciudad</label>
+                                            <input type="text" class="form-control mb-3" name="Ciudad" value="{{d.CIUDAD}}">
+                                            <label>Direccion</label>
+                                            <input type="text" class="form-control mb-3" name="Direccion" value="{{d.DIRRECCION}}">
+                                            <label>Telefono</label>
+                                            <input type="text" class="form-control mb-3" name="Telefono" value="{{d.TELEFONO}}">
+                                            
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                            
+                              </div>
+                            </div>
+                          </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
