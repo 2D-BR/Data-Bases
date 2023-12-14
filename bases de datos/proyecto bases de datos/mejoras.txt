@@ -1,0 +1,9 @@
+DAVID BUITRAGO RODRIGUEZ  1004778945 
+
+Para la mejoras del proyecto se ralizaron dos cosas.
+
+-la primera fue hacer que todos los formularios mostraran la señal de rellenar todos los campos necesarios,
+excepto para los campos que son datos que pueden ser nulos como por ejemplo segundo nombre.
+
+-el segundo arreglo fue la muestra de la tabla ventas para que mostrara el dinero de la factura con la que estaba
+asociada, ya que esta no mostraba esa información y era de las mas importante.

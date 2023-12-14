@@ -1,0 +1,56 @@
+DAVID BUITRAGO RODRIGUEZ  1004778945
+
+Estructura del Proyecto "Optica Century Vision"
+
+- python-flask-mysql/
+  - src/
+    - templates/
+      - clientes_actuales.html
+      - productos_disponibles.html
+      - shopping.html
+      - facturas.html
+      - ventas.html
+      - login.html
+      - inicio_Admin.html
+      - inicio_vendedor.html
+      - inicio.html
+      - index.html
+      - product.html
+    - app.py (módulo principal de la aplicación Flask)
+    - database.py (gestión de la conexión con la base de datos MySQL)
+
+se adjunto el export de la base de datos hecha en MySQL Optica_vision.sql
+
+funciones de archivos html:
+
+clientes_actuales.html: Muestra y gestiona la lista de clientes.
+productos_disponibles.html: Muestra y gestiona los productos disponibles.
+shopping.html: Permite a los vendedores registrar compras.
+facturas.html: Muestra resúmenes de las facturas generadas.
+ventas.html: Proporciona información sobre las ventas realizadas.
+
+login.html: Vista de inicio de sesión.
+inicio_Admin.html: Página de inicio para administradores.
+inicio_vendedor.html: Página de inicio para vendedores.
+inicio.html: Página de inicio predeterminada.
+index.html: Página adicional o de inicio.
+
+product.html: Permite registrar y gestionar productos.
+
+
+cruds:
+
+app.py:
+
+    app.py es un archivo de Python que crea una aplicación web utilizando el framework Flask.
+    Define rutas y controladores para diferentes partes de la aplicación, como el inicio de sesión, la gestión de clientes, productos, compras, facturas y ventas.
+    Permite a los usuarios iniciar sesión como administradores o vendedores y redirige a páginas específicas para cada uno.
+    Permite a los usuarios administradores gestionar clientes y productos, así como registrar compras y ver facturas.
+    Permite a los usuarios vendedores registrar ventas y ver resúmenes de ventas.
+    Conecta con una base de datos MySQL para almacenar y recuperar datos.
+
+database.py:
+
+    database.py es un módulo que establece una conexión a una base de datos MySQL.
+    Define una variable llamada database que almacena la conexión a la base de datos.
+    La base de datos se encuentra en el host '127.0.0.1' y utiliza un usuario 'root' con la contraseña 'root' para acceder a la base de datos 'optica'.

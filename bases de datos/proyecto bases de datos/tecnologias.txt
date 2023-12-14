@@ -1,0 +1,23 @@
+
+DAVID BUITRAGO RODRIGUEZ  1004778945
+
+
+Tecnologías utilizadas en el proyecto:
+
+    Python: El lenguaje de programación principal del proyecto, utilizado para desarrollar la lógica de la aplicación web.
+
+    Flask: Un framework de Python utilizado para crear la aplicación web. Flask proporciona las herramientas necesarias para definir rutas y controladores, así como para gestionar sesiones y plantillas HTML.
+
+    HTML: Lenguaje de marcado utilizado para crear la estructura y contenido de las páginas web. Los archivos HTML se utilizan para renderizar la interfaz de usuario.
+
+    CSS: Hojas de estilo en cascada (CSS) se utilizan para definir la apariencia y el diseño de las páginas web. Esto incluye la configuración de colores, fuentes, tamaños y disposición de elementos.
+
+    MySQL: Un sistema de gestión de bases de datos relacional (RDBMS) utilizado para almacenar y gestionar los datos del proyecto. La base de datos MySQL almacena información sobre clientes, productos, compras, facturas y ventas.
+
+    Jinja2: Un motor de plantillas utilizado en Flask para renderizar páginas HTML dinámicas. Permite insertar datos de la base de datos en las plantillas HTML.
+
+    datetime: Un módulo de Python utilizado para trabajar con fechas y horas. Se utiliza para registrar y mostrar la fecha y hora en el proyecto.
+
+    os: Un módulo de Python utilizado para realizar operaciones relacionadas con el sistema operativo, como la gestión de directorios y rutas de archivos.
+
+    MySQL Connector: Un paquete de Python que se utiliza para conectar la aplicación Flask a la base de datos MySQL.
